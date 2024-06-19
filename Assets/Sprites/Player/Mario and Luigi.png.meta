@@ -395,6 +395,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Death
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 414
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d255a5f08d42a40a820078e381445e
+      internalID: 1692838332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -412,6 +433,7 @@ TextureImporter:
       BigWalk2: -791703585
       BigWalk3: -692620890
       Crouch: 437078415
+      Death: 1692838332
       Idle: 75760251
       Jump: 311404768
       Mario and Luigi_10: 697908585
