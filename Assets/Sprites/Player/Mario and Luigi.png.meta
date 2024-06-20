@@ -207,27 +207,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mario and Luigi_4
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 412
-        width: 13
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e19393ed0103a2a4da7de2c5271fbdb3
-      internalID: -623667611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Jump
       rect:
         serializedVersion: 2
@@ -333,27 +312,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mario and Luigi_10
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 372
-        width: 16
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fc9403821a56e54fbf1e9d92f34e6e9
-      internalID: 697908585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: BigJump
       rect:
         serializedVersion: 2
@@ -416,6 +374,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Attack
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 332
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce38452d7f348440a6f9fdfd7756130
+      internalID: 1920411649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 336
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabd8f5a2e989614fa8dcd77e28e1ea3
+      internalID: -1162506099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -427,6 +427,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Attack: 1920411649
       BigIdle: 1190991340
       BigJump: -89639575
       BigWalk1: 369323394
@@ -434,6 +435,7 @@ TextureImporter:
       BigWalk3: -692620890
       Crouch: 437078415
       Death: 1692838332
+      Fireball: -1162506099
       Idle: 75760251
       Jump: 311404768
       Mario and Luigi_10: 697908585

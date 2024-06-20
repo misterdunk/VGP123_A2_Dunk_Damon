@@ -8,8 +8,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int maxLives = 5;
-    [SerializeField] private int speed;
-    [SerializeField] private int jumpForce = 3;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
 
     //Player gameplay variables
     private int _lives;
@@ -89,13 +89,13 @@ public class PlayerController : MonoBehaviour
 
         if (speed <= 0)
         {
-            speed = 3;
+            speed = 3f;
             Debug.Log("Speed Set To Default Value");
         }
 
         if (jumpForce <= 0)
         {
-            jumpForce = 4;
+            jumpForce = 4f;
             Debug.Log("JumpForce Set To Default Value");
         }
 

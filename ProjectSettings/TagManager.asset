@@ -6,6 +6,10 @@ TagManager:
   tags:
   - GroundCheck
   - Coin
+  - Goomba
+  - GKoop
+  - RKoop
+  - Turret
   layers:
   - Default
   - TransparentFX
