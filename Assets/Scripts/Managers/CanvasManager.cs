@@ -58,10 +58,33 @@ public class CanvasManager : MonoBehaviour
         if (backButton)
             backButton.onClick.AddListener(() => SetMenus(mainMenu, settingsMenu));
 
+        if (masterVolSlider)
+        {
+            SetupSliderInfo(masterVolSlider, masterVolSliderText, "MasterVol");
+        }
+
         if (livesText)
         {
             GameManager.Instance.OnLifeValueChange += OnLifeValueChanged;
             livesText.text = $"lives: {GameManager.Instance.lives}";
+        }
+
+    void SetupSliderInfo(Slider mySlider, TMP_Text sliderText, string parameterName)
+        {
+            mySlider.onValueChanged.AddListener((value) => OnSliderValueChanged(value, sliderText, parameterName, mySlider));
+            float newVal = (mySlider.value == 0.0f) ? -80.0f : 20.0f * Mathf.Log10(mySlider.value);
+            audioMixer.SetFloat(parameterName, newVal);
+
+            if (sliderText)
+                sliderText.text = (newVal == -80.0f) ? "0%" : (int)(mySlider.value * 1) + "%";
+        }
+
+    void OnSliderValueChanged(float value, TMP_Text volSliderText, string mixerParameterName, Slider mySlider)
+        {
+            value = (value == 0.0f) ? -80.0f : 20.0f * Mathf.Log10(value);
+            if (volSliderText)
+                volSliderText.text = (value == -80.0f) ? "0%" : (int)(mySlider.value * 1) + "%";
+            audioMixer.SetFloat(mixerParameterName, value);
         }
 
     void OnLifeValueChanged(int value)

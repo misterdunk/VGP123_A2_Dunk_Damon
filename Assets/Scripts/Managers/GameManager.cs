@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         if (maxLives <= 0)
         {
-            maxLives = 5;
+            maxLives = 3;
         }
         lives = maxLives;
     }

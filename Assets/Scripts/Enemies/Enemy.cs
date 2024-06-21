@@ -21,4 +21,19 @@ public abstract class Enemy : MonoBehaviour
 
         health = maxHealth;
     }
+
+    public virtual void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            anim.SetTrigger("Death");
+
+            if (transform.parent != null)
+                Destroy(transform.parent.gameObject, 2);
+            else
+                Destroy(gameObject, 2);
+        }
+    }
 }
