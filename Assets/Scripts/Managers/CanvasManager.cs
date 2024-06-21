@@ -118,6 +118,11 @@ public class CanvasManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
+
+            if (pauseMenu.activeSelf)
+            {
+                
+            }
         }
     }
 }

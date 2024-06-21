@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int maxLives = 5;
@@ -52,10 +53,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask isGroundLayer;
     [SerializeField] private float groundCheckRadius;
 
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip coinClip;
+
 
     private Rigidbody2D RB;
     private SpriteRenderer SR;
     private Animator anim;
+    private AudioSource audioSource;
 
     private Coroutine jumpForceChange = null;
     public void JumpForceChange()
@@ -86,6 +91,7 @@ public class PlayerController : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         SR = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         if (speed <= 0)
         {
@@ -141,9 +147,10 @@ public class PlayerController : MonoBehaviour
 
         RB.velocity = moveDirection;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             RB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            audioSource.PlayOneShot(jumpClip);
         }
 
         if (Input.GetButtonDown("Fire1"))
@@ -179,6 +186,7 @@ public class PlayerController : MonoBehaviour
     {
        if(other.gameObject.CompareTag("Coin"))
         {
+            audioSource.PlayOneShot(coinClip);
             Destroy(other.gameObject);
         }
     }

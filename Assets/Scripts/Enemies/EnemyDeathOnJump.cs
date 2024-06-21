@@ -7,10 +7,13 @@ public class EnemyDeathOnJump : MonoBehaviour
 {
     public float bounceForce = 2f;
     protected Animator anim;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip squishClip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         if (collision.CompareTag("Player"))
         {
@@ -29,8 +32,9 @@ public class EnemyDeathOnJump : MonoBehaviour
             {
                 anim.Play("gkdeath");
             }
-            // Destroy the enemy
             Destroy(gameObject);
+            audioSource.PlayOneShot(squishClip);
+
         }
     }
 }
